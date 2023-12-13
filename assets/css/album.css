@@ -21,11 +21,6 @@
   opacity: 0.5;
 }
 
-/* #central-bar-container,
-#nav-bar-central {
-  background:#9C2226
-} */
-
 #central-bar {
   max-height: 100vh;
   overflow-y: auto;
