@@ -1,0 +1,15 @@
+body {
+  color: lightgrey;
+  font-family: circular;
+}
+
+.navIcon {
+  fill: lightgrey;
+}
+.persNav {
+  list-style: none;
+}
+
+.fontSideBar {
+  font-size: 10px;
+}

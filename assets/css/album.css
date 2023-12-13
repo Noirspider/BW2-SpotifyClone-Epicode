@@ -1,0 +1,89 @@
+.top-playlist {
+  top: unset;
+}
+
+@media screen and (min-width: 768px) {
+  .top-playlist {
+    top: 69px;
+  }
+}
+
+#song-list img {
+  width: 50px;
+}
+#song-list p {
+  line-height: 0;
+}
+
+#central-bar::-webkit-scrollbar-thumb {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  opacity: 0.5;
+}
+
+/* #central-bar-container,
+#nav-bar-central {
+  background:#9C2226
+} */
+
+#central-bar {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+@media screen and (min-width: 768px) {
+  #central-bar {
+    height: calc(100vh - 147px);
+    overflow-y: auto;
+  }
+}
+
+.icon-player-container {
+  width: 56px;
+  height: 56px;
+  background-color: #1ed760;
+  border-radius: 50%;
+}
+
+.mb-mobile {
+  margin-bottom: 220px;
+}
+
+#mobile-sticky {
+  position: sticky;
+  top: -8px;
+  z-index: 2;
+  margin: -1rem;
+}
+
+#name-album-2 {
+  display: none;
+}
+
+.box1,
+.box2 {
+  width: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.box1 {
+  display: inline-block;
+}
+
+.box2 {
+  display: none;
+}
+
+.wrapper {
+  display: inline-block;
+}
+
+.wrapper:hover .box1 {
+  display: none;
+}
+
+.wrapper:hover .box2 {
+  display: inline-block;
+}
