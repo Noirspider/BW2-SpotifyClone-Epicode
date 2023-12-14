@@ -25,6 +25,9 @@ const playlist = [
   { nomePlaylist: "Pippo e la cadrega" },
   { nomePlaylist: "il Pippo della Montagna" },
   { nomePlaylist: "Pippaggeddon" },
+  { nomePlaylist: "Pippaggeddon" },
+  { nomePlaylist: "Pippaggeddon" },
+  { nomePlaylist: "Pippaggeddon" },
 ];
 
 // Otteniamo l'elemento in cui inserire il nostro HTML
