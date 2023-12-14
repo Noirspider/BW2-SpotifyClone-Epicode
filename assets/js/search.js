@@ -45,6 +45,7 @@ const searchArtist = async function () {
       ) {
         const artist = element.artist;
         const artistId = element.artist.id;
+        console.log(responseObj);
 
         searchContainer.innerHTML = "";
 
@@ -140,6 +141,7 @@ const searchArtist = async function () {
 
     localStorage.setItem("albums", JSON.stringify(filteredAlbums));
     localStorage.setItem("dataObj", JSON.stringify(responseObj.data));
+    //provole e provini
 
     // console.log(album);
   } catch (error) {
