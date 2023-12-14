@@ -21,81 +21,71 @@
           <div class="row fs-6 border-bottom gy-1 px-2" id="hero-left-side">
             <div class="col-12 px-0">
               <ul class="p-3 mb-2 bg-spotify rounded-3">
-                <li class="mb-3 fw-bold fs-8 d-flex justify-content-between align-items-center">
-                  <div>
-                    <a href="./index.html" class="text-decoration-none text-white">
-                      <i class="bi bi-house-door-fill fs-icons"></i>
-                      <span class="ms-2">Home</span>
-                    </a>
-                  </div>
+                <li class="mb-3 fw-bold fs-8">
                   <div class="dropdown">
                     <button class="btn btn-secondary bg-transparent border-0 p-0" type="menu" data-bs-toggle="dropdown"
                       aria-expanded="false">
                       <i class="bi bi-three-dots fs-4"></i>
                     </button>
-                    <ul class="dropdown-menu bg-black">
-                      <li><a class="dropdown-item" href="#">File</a></li>
-                      <li>
-                        <a class="dropdown-item" href="#">Modifica</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">Visualizza</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">Riproduzione</a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="#">Assistenza</a>
-                      </li>
-                    </ul>
                   </div>
                 </li>
                 <li class="mb-3 fw-bold fs-8">
+                  <div>
+                    <a href="./index.html" class="text-decoration-none text-white">
+                      <i class="bi bi-house-door-fill fs-icons"></i>
+                      <span class="ms-2 pointer">Home</span>
+                    </a>
+                  </div>
+
+                </li>
+                <li class="mb-3 fw-bold fs-8 pointer">
                   <a href="./search.html" class="text-decoration-none text-white">
                     <i class="bi bi-search fs-icons"></i>
                     <span class="ms-2">Cerca</span>
                   </a>
                 </li>
-              </ul>
-              <div class="p-3 mb-2 bg-spotify rounded-3">
-                <div class="d-flex justify-content-between align-items-center">
+                <li class="mb-3 fw-bold fs-8 pointer">
+
                   <div class="d-flex align-items-center">
-                    <svg width="25px" data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24" class=""
-                      stroke="white" fill="white">
+                    <svg width="25px" data-encore-id="icon" role="img" aria-hidden="true" viewBox="0 0 24 24"
+                      class="pointer" stroke="white" fill="white">
                       <path
                         d="M3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zM15.5 2.134A1 1 0 0 0 14 3v18a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V6.464a1 1 0 0 0-.5-.866l-6-3.464zM9 2a1 1 0 0 0-1 1v18a1 1 0 1 0 2 0V3a1 1 0 0 0-1-1z">
                       </path>
                     </svg>
                     <span class="ms-2 fw-bold fs-8 pointer">La tua libreria</span>
                   </div>
+                </li>
+              </ul>
 
-                  <button class="btn px-0">
-                    <i class="bi bi-plus-lg"></i>
-                  </button>
-                </div>
-                <div class="mt-2 d-flex gap-2 d-none d-xl-flex">
-                  <button class="btn py-1 rounded-pill bg-accent fs-8 fw-bold">
-                    Playlist
-                  </button>
-                  <button class="btn py-1 rounded-pill bg-accent fs-8 fw-bold">
-                    Artist
-                  </button>
-                  <button class="btn py-1 rounded-pill bg-accent fs-8 fw-bold">
-                    Album
-                  </button>
-                </div>
+              <div id="playlist-bar" class="p-3 mb-2 bg-spotify rounded-3">
+                <div class="">
+                  <ul class="p-0 mb-2 bg-spotify rounded-3">
+                    <li class="mb-3 fw-bold fs-8">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-plus-square fs-4"></i>
+                        <span class="ms-2 pointer">Crea playlist</span>
+                        </a>
+                      </div>
 
-                <div id="playlist-list" class="playlist mt-4 p-1">
-                  <div class="row d-flex align-items-center mb-3 py-1 bg-dark-2-hover pointer">
-                    <div class="col-3">
-                      <img class="img-fluid rounded-2" src="./assets/imgs/liked-song.png" alt="" />
-                    </div>
-                    <div class="col-9 px-0 fs-8">
-                      <p class="m-0 fw-bold">Canzoni Preferite</p>
-                      <small><i class="bi bi-pin-angle-fill me-1 text-success"></i>Playlist
-                      </small>
-                    </div>
-                  </div>
+                    </li>
+                    <li class="mb-3 fw-bold fs-8 pointer">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-heart-fill fs-4"></i>
+                        <span class="ms-2">Brani che ti piacciono</span>
+                      </div>
+                      </a>
+                    </li>
+                    <li class="mb-3 fw-bold fs-8 pointer">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-bookmark  fs-4"></i>
+                        <span class="ms-2 fw-bold fs-8 pointer">I tuoi episodi</span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <!--playlist-->
+                <div id="playlist-list" class="playlist mt-4 p-1 border-top border-light-subtle">
                 </div>
               </div>
             </div>
