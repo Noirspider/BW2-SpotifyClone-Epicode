@@ -12,7 +12,7 @@ const token = "18ec06a3e2mshc92412178be162ap1a604djsn2c54c747cb17"; // Token Gia
 
 const Host = "deezerdevs-deezer.p.rapidapi.com";
 
-const searcArtist = async function () {
+const searchArtist = async function () {
   try {
     const response = await fetch(searchURL + searchInput.value, {
       method: "GET",
@@ -29,7 +29,7 @@ const searcArtist = async function () {
 
     const allAlbums = [];
     searchContainer.innerHTML = "";
-    for (let i = 0; i < responseObj.data.lenght; i++) {
+    for (let i = 0; i < responseObj.data.length; i++) {
       const element = responseObj.data[i];
       if (
         element.artist.name
