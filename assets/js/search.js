@@ -67,12 +67,12 @@ const searchArtist = async function () {
           searchInput.value = "";
         });
 
+        const cardBody = document.createElement("div");
+        cardBody.classList = "card-body";
+
         const cardImg = document.createElement("img");
         cardImg.classList = "card-img-top w-25 rounded-circle shadow-lg";
         cardImg.src = artist.picture_big;
-
-        const cardBody = document.createElement("div");
-        cardBody.classList = "card-body";
 
         const cardTitle = document.createElement("h5");
         cardTitle.classList = "card-title";
@@ -81,7 +81,6 @@ const searchArtist = async function () {
         const cardText = document.createElement("p");
         cardText.classList = "card-text badge bg-dark";
         cardText.innerText = artist.type.charAt(0).toUpperCase() + artist.type.slice(1);
-
         cardBody.appendChild(cardTitle);
         cardBody.appendChild(cardText);
         artistCard.appendChild(cardImg);
