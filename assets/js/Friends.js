@@ -91,6 +91,27 @@ const amici = [
     team: "Pdor",
     tempo: "4 giorni",
   },
+  {
+    nome: "Pippo",
+    immagine: "./assets/imgs/main/Pippo.jpg",
+    stato: "La Cadrega",
+    team: "Pdor",
+    tempo: "4 giorni",
+  },
+  {
+    nome: "Pippo",
+    immagine: "./assets/imgs/main/Pippo.jpg",
+    stato: "La Cadrega",
+    team: "Pdor",
+    tempo: "4 giorni",
+  },
+  {
+    nome: "Pippo",
+    immagine: "./assets/imgs/main/Pippo.jpg",
+    stato: "La Cadrega",
+    team: "Pdor",
+    tempo: "4 giorni",
+  },
 ];
 
 // Otteniamo l'elemento del container degli amici
