@@ -82,13 +82,18 @@ const artistPage = async function () {
   const artistId = params.get("artistId");
 
   const artistURL = "https://deezerdevs-deezer.p.rapidapi.com/artist/";
+  const token = "18ec06a3e2mshc92412178be162ap1a604djsn2c54c747cb17"; // Token Gian
+  // const token = "940dce657bmshd8c731d3dbd3502p18a658jsn330fcc56530d"  // Token Jag
+  // const token = "66b19f990dmsh7c4ff58d5ea21d0p1aa92fjsnd50246c25f1d"  // Token Val
+  // const token = "c4234d51b0msh31724428db3a8bfp114b28jsnf03bb1f920a7"  // Token Dav
 
+  const Host = "deezerdevs-deezer.p.rapidapi.com";
   try {
     const response = await fetch(artistURL + artistId, {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "6969464db2msh57ee0909918148fp1b3cafjsn9608ba4cbef4",
-        "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+        "X-RapidAPI-Key": token,
+        "X-RapidAPI-Host": Host,
       },
     });
 
