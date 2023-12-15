@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer con Barra di Avanzamento</title>
+    <style>
+        .base-timer {
+            position: relative;
+            width: 200px;
+            /* Larghezza desiderata per la barra */
+            height: 20px;
+            /* Altezza desiderata per la barra */
+            background-color: #ccc;
+            /* Colore di sfondo */
+            border-radius: 5px;
+            /* Bordo arrotondato */
+            overflow: hidden;
+            /* Nascondi il contenuto che supera la barra */
+        }
+
+        .base-timer__bar {
+            width: 100%;
+            height: 100%;
+            background-color: cyan;
+            /* Colore della barra */
+        }
+
+        .base-timer__progress {
+            width: 0;
+            height: 100%;
+            background-color: black;
+            /* Colore della parte progressiva della barra */
+            transition: width 1s linear;
+            /* Animazione della larghezza */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="base-timer">
+        <div class="base-timer__bar">
+            <div id="base-timer-progress" class="base-timer__progress"></div>
+        </div>
+        <span id="base-timer-label" class="base-timer__label">60</span>
+    </div>
+
+    <script>
+        const TIME_LIMIT = 276;
+        let timePassed = 0;
+        let timeLeft = TIME_LIMIT;
+        let timerInterval = null;
+
+        function onTimesUp() {
+            clearInterval(timerInterval);
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timePassed = timePassed += 1;
+                timeLeft = TIME_LIMIT - timePassed;
+                document.getElementById("base-timer-label").textContent = timeLeft;
+
+                if (timeLeft === 0) {
+                    onTimesUp();
+
+                } else {
+                    setBarWidth(); // Aggiorna la larghezza della barra
+                }
+            }, 1000);
+        }
+
+        function reset() {
+            clearInterval(timerInterval);
+            timePassed = 0;
+            timeLeft = TIME_LIMIT;
+            document.getElementById("base-timer-label").textContent = timeLeft;
+            setBarWidth();
+        }
+
+        function setBarWidth() {
+            const progressBar = document.getElementById("base-timer-progress");
+            const timeFraction = timeLeft / TIME_LIMIT;
+            const barWidth = (100 - timeFraction * 100) + "%"; // Calcola la larghezza in percentuale
+            progressBar.style.width = barWidth;
+        }
+
+        startTimer(); // Avvia il timer all'avvio della pagina
+    </script>
+</body>
+
+</html>
