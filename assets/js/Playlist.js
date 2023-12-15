@@ -1,5 +1,6 @@
 const playlist = [
   { nomePlaylist: "LA CADREGA" },
+  { nomePlaylist: "4 uomini e un codice" },
   { nomePlaylist: "Sono il conte Dracula MIIIIII" },
   { nomePlaylist: "SFORZA OLE'" },
   { nomePlaylist: "Vado a cambiare due carte" },

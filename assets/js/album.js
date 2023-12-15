@@ -56,6 +56,8 @@ const trackList = async function (tracks) {
 
     const playBtnContent = trackListElement.getElementsByTagName("span")[0];
     const playBtn = trackListElement.getElementsByTagName("span")[1];
+    //const playBtnContent = trackListElement.getElementsById("play");
+    //const playBtn = trackListElement.getElementsById("play");
     const trackPreviewLink = trackListElement.getElementsByTagName("span")[2].innerText;
 
     console.log(audioCorrente);
@@ -78,7 +80,7 @@ const trackList = async function (tracks) {
           playBarItems(track);
           audioCorrente.play();
         } else {
-          // Se il link è lo stesso, imposta l'audio corrente a null (stop)
+          // Se è lo stesso link , imposta l'audio a null (stop)
           audioCorrente.src = null;
         }
       } else {
@@ -114,13 +116,19 @@ const albumPage = async function () {
   const albumId = params.get("albumId");
   //   const albumId = 13994766;
   const albumURL = "https://deezerdevs-deezer.p.rapidapi.com/album/";
+  const token = "18ec06a3e2mshc92412178be162ap1a604djsn2c54c747cb17"; // Token Gian
+  // const token = "940dce657bmshd8c731d3dbd3502p18a658jsn330fcc56530d"  // Token Jag
+  // const token = "66b19f990dmsh7c4ff58d5ea21d0p1aa92fjsnd50246c25f1d"  // Token Val
+  // const token = "c4234d51b0msh31724428db3a8bfp114b28jsnf03bb1f920a7"  // Token Dav
+
+  const Host = "deezerdevs-deezer.p.rapidapi.com";
 
   try {
     const response = await fetch(albumURL + albumId, {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "6969464db2msh57ee0909918148fp1b3cafjsn9608ba4cbef4",
-        "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+        "X-RapidAPI-Key": token,
+        "X-RapidAPI-Host": Host,
       },
     });
 
@@ -165,11 +173,6 @@ const albumPage = async function () {
     trackList(album.tracks.data);
 
     const colorThief = new ColorThief();
-    // const img = document.getElementById("album-cover");
-    // console.log(img)
-    // // const tiltedImg = document.getElementsByClassName("rotate-image");
-    // console.log(tiltedImg)
-    // console.log(img)
 
     albumCover.addEventListener("load", () => {
       console.log(albumCover);
