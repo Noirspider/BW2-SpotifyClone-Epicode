@@ -69,6 +69,17 @@ const trackList = async function (tracks) {
       // Se c'è un audio corrente, interrompi la riproduzione
       const player = document.getElementById("player");
       const buttonPlayer = document.getElementById("PIPPO");
+      player.addEventListener("timeupdate", (event) => {
+        const progressBar = document.getElementById("progressBar");
+        let duration = event.currentTarget.duration;
+        let currentTime = event.currentTarget.currentTime;
+        const progressPercent = (currentTime / duration) * 100;
+        progressBar.value = progressPercent;
+        /* const playerCurrentTime = document.getElementById("playerCurrentTime");
+        const playerDuration = document.getElementById("playerDuration");
+        playerCurrentTime.innerHTML = Math.floor(currentTime);
+        playerDuration.innerHTML = Math.floor(duration); */
+      });
       function riproduci() {
         buttonPlayer.addEventListener("click", function () {
           if (player.paused) {
@@ -82,7 +93,7 @@ const trackList = async function (tracks) {
       if (audioCorrente) {
         if (audioCorrente.src !== trackPreviewLink) {
           player.src = trackPreviewLink;
-          player.setAttribute("controls", "controls");
+          /*  player.setAttribute("controls", "controls"); */
           player.pause();
           console.log(audioCorrente.src);
           audioCorrente = new Audio(trackPreviewLink);
@@ -99,7 +110,7 @@ const trackList = async function (tracks) {
       } else {
         audioCorrente = new Audio(trackPreviewLink);
         player.src = trackPreviewLink;
-        player.setAttribute("controls", "controls");
+        /*  player.setAttribute("controls", "controls"); */
         player.classList = "mx-auto text-primary w-100";
         playBarItems(track);
         player.play();

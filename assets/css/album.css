@@ -82,5 +82,16 @@
 .wrapper:hover .box2 {
   display: inline-block;
 }
-#player
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  background: grey;
+  border-radius: 1rem;
+}
+input[type="range"]::-webkit-slider-thumb {
+  background: white;
+}
+
+#progressBar {
+  min-width: 100%;
 }
