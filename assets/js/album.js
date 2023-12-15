@@ -54,10 +54,11 @@ const trackList = async function (tracks) {
     </div>
     `;
 
-    const playBtnContent = trackListElement.getElementsByTagName("span")[0];
+    /*     const playBtnContent = trackListElement.getElementsByTagName("span")[0]; */
     const playBtn = trackListElement.getElementsByTagName("span")[1];
-    //const playBtnContent = trackListElement.getElementsById("play");
+
     //const playBtn = trackListElement.getElementsById("play");
+
     const trackPreviewLink = trackListElement.getElementsByTagName("span")[2].innerText;
 
     console.log(audioCorrente);
@@ -66,48 +67,53 @@ const trackList = async function (tracks) {
 
     playBtn.addEventListener("click", function () {
       // Se c'è un audio corrente, interrompi la riproduzione
-
+      const player = document.getElementById("player");
+      const buttonPlayer = document.getElementById("PIPPO");
+      function riproduci() {
+        buttonPlayer.addEventListener("click", function () {
+          if (player.paused) {
+            player.play();
+          } else {
+            player.pause();
+          }
+        });
+      }
+      console.log(buttonPlayer);
       if (audioCorrente) {
-        audioCorrente.pause();
-
-        // Se il link del nuovo audio è diverso dall'audio corrente, avvia la nuova traccia
         if (audioCorrente.src !== trackPreviewLink) {
-          audioCorrente.src = null;
-
+          player.src = trackPreviewLink;
+          player.setAttribute("controls", "controls");
+          player.pause();
           console.log(audioCorrente.src);
           audioCorrente = new Audio(trackPreviewLink);
-
           playBarItems(track);
-          audioCorrente.play();
+        }
+
+        if (audioCorrente.paused) {
+          player.play();
         } else {
-          // Se è lo stesso link , imposta l'audio a null (stop)
-          audioCorrente.src = null;
+          player.pause();
+
+          console.log(buttonPlayer);
         }
       } else {
-        // Se non c'è un audio corrente, avvia la riproduzione del nuovo audio
         audioCorrente = new Audio(trackPreviewLink);
-
+        player.src = trackPreviewLink;
+        player.setAttribute("controls", "controls");
+        player.classList = "mx-auto text-primary w-100";
         playBarItems(track);
-        audioCorrente.play();
+        player.play();
         console.log(audioCorrente);
+        riproduci();
       }
     });
     trackListContainer.appendChild(trackListElement);
   });
-
-  //FUNZIONI CHE PER IL CAMBIO DEL TEMPO DELLA CANZONE (VA MALE)
-  let formRange = document.getElementById("form-range");
-
-  function avviaRiproduzione(valoreAttuale) {
-    if (valoreAttuale <= 30) {
-      formRange.value = valoreAttuale;
-      setTimeout(function () {
-        avviaRiproduzione(valoreAttuale + 1);
-      }, 1000);
-    }
-  }
 };
-
+function setVolume() {
+  var volumeSlider = document.getElementById("volumeSlider");
+  player.volume = volumeSlider.value;
+}
 const playBarSongTitle = document.getElementById("playbar-song-title");
 const playBarArtistName = document.getElementById("playbar-artist-name");
 
