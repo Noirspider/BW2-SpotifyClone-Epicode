@@ -80,7 +80,7 @@ const trackList = async function (tracks) {
           playBarItems(track);
           audioCorrente.play();
         } else {
-          // Se il link è lo stesso, imposta l'audio corrente a null (stop)
+          // Se è lo stesso link , imposta l'audio a null (stop)
           audioCorrente.src = null;
         }
       } else {
